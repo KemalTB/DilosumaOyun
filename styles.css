@@ -72,8 +72,8 @@ input[type="text"], input[type="number"] {
 }
 
 .memory-card {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     margin: 5px;
     background-color: #007bff;
     display: flex;
