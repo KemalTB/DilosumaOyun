@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyunlar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Oyuncu Adı Girişi -->
+        <div id="playerNameInput">
+            <h1>Oyuna Hoş Geldiniz</h1>
+            <p>Oyuncu adınızı girin:</p>
+            <input type="text" id="playerName" placeholder="Adinizi yaziniz" />
+            <button id="startGameButton">Oyuna Gir</button>
+        </div>
+
+        <!-- Sayı Tahmin Oyunu -->
+        <div id="guessGame" style="display:none;">
+            <h1>DOGRU SAYIYI TAHMIN ET</h1>
+            <p id="guessGameText"></p>
+            <input type="number" id="guessInput" placeholder="Tahmininizi buraya yazin" />
+            <button id="guessButton">Tahmin Et</button>
+            <p id="guessMessage"></p>
+            <p id="guessAttempts"></p>
+            <button id="retryGuessButton" style="display:none;">Tekrar Dene</button>
+        </div>
+
+        <!-- Taş Kağıt Makas Oyunu -->
+        <div id="rpsGame" style="display:none;">
+            <h1>Taş Kağıt Makas</h1>
+            <h2>Bu oyunda kimse beni yenemez</h2>
+            <h3>Sende Yenemeyeceksin</h3>
+            <div class="choices">
+                <button class="choice" id="rock">Taş</button>
+                <button class="choice" id="paper">Kağıt</button>
+                <button class="choice" id="scissors">Makas</button>
+            </div>
+            <div id="rpsResult"></div>
+            <p id="rpsScore"></p>
+            <button id="retryRPSButton" style="display:none;">Tekrar Dene</button>
+        </div>
+
+        <!-- Memory Oyunu -->
+        <div id="memoryGame" style="display:none;">
+            <h1>Hafızan Ne Kadar Güclü?</h1>
+            <h2>Bunu da Gecebilirsen</h2>
+            <h3>Sampiyon Sensin..!</h3>
+            <div id="memoryBoard"></div>
+            <p id="memoryMessage"></p>
+            <p id="memoryAttempts"></p>
+            <button id="retryMemoryButton" style="display:none;">Tekrar Dene</button>
+        </div>
+
+        <!-- Tebrikler -->
+        <div id="congratulations" style="display:none;">
+            <h1>Yeni Sampiyonumuz Sensin</h1>
+            <h2>🎉Tebrikler🎉</h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

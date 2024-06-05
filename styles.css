@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.choices, #memoryBoard {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.choice {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.choice:hover {
+    background-color: #0056b3;
+}
+
+#guessMessage, #rpsResult, #memoryMessage, #guessAttempts, #rpsScore, #memoryAttempts {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#memoryBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 sütun */
+    gap: 10px; /* Kartlar arasındaki boşluk */
+}
+
+.memory-card {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.memory-card.flipped {
+    background-color: #fff;
+    color: #000;
+    cursor: default;
+}
+
+#congratulations {
+    font-size: 24px;
+    color: #ff6347;
+    text-align: center;
+}
+
