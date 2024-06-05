@@ -68,13 +68,13 @@ input[type="text"], input[type="number"] {
 #memoryBoard {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 sütun */
-    gap: 10px; /* Kartlar arasındaki boşluk */
+    gap: 5px; /* Kartlar arasındaki boşluk */
 }
 
 .memory-card {
     width: 100px;
     height: 100px;
-    margin: 10px;
+    margin: 5px;
     background-color: #007bff;
     display: flex;
     justify-content: center;
