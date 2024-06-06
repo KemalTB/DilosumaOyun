@@ -69,6 +69,10 @@ input[type="text"], input[type="number"] {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 sütun */
     gap: 5px; /* Kartlar arasındaki boşluk */
+    width: 100%;
+    min-width: 300px;
+    max-width: 800px;
+    margin: auto;
 }
 
 .memory-card {
