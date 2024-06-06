@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container1">
         <!-- Oyuncu Adı Girişi -->
         <div id="playerNameInput">
             <h1>Oyuna Hoş Geldiniz</h1>
+            <br>
             <p>Oyuncu adınızı girin:</p>
+            <br><br><br>
             <input type="text" id="playerName" placeholder="Adinizi yaziniz" />
             <button id="startGameButton">Oyuna Gir</button>
         </div>
@@ -19,10 +21,14 @@
         <!-- Sayı Tahmin Oyunu -->
         <div id="guessGame" style="display:none;">
             <h1>DOGRU SAYIYI TAHMIN ET</h1>
+            
             <h3>1'le 100 arasi sayi yaz</h3>
+            <br><br>
 
             <p id="guessGameText"></p>
+            <br><br>
             <input type="number" id="guessInput" placeholder="Tahmininizi buraya yazin" />
+            
             <button id="guessButton">Tahmin Et</button>
             <p id="guessMessage"></p>
             <p id="guessAttempts"></p>
@@ -36,10 +42,11 @@
             <h3>Sende Yenemeyeceksin</h3>
             
             <div class="choices">
-                <button class="choice" id="rock">Taş</button>
-                <button class="choice" id="paper">Kağıt</button>
-                <button class="choice" id="scissors">Makas</button>
+                <img class="choice" id="rock" src="./assets/rock.png" alt="Taş">
+                <img class="choice" id="paper" src="./assets/paper.png" alt="Kağıt">
+                <img class="choice" id="scissors" src="./assets/scissor.png" alt="Makas">
             </div>
+            
             <div id="rpsResult"></div>
             <p id="rpsScore"></p>
             <button id="retryRPSButton" style="display:none;">Tekrar Dene</button>
@@ -49,7 +56,7 @@
         <div id="memoryGame" style="display:none;">
             <h1>Hafızan Ne Kadar Güclü?</h1>
             <h2>Bunu da Gecebilirsen</h2>
-            <h3>Sampiyon Sensin..!</h3>
+            <h2>Sampiyon Sensin..!</h2><br>
             
             <div id="memoryBoard"></div>
             <p id="memoryMessage"></p>
@@ -60,7 +67,8 @@
         <!-- Tebrikler -->
         <div id="congratulations" style="display:none;">
             <h1>Yeni Sampiyonumuz Sensin</h1>
-            <h2>🎉Tebrikler🎉</h2>
+            <br><br>
+            <h1>🎉Tebrikler🎉</h1>
         </div>
     </div>
     <script src="script.js"></script>

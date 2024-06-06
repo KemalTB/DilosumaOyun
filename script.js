@@ -78,20 +78,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultDiv = document.getElementById('rpsResult');
     const retryRPSButton = document.getElementById('retryRPSButton');
     const rpsScoreDisplay = document.getElementById('rpsScore');
-    const choicesArray = ['rock', 'paper', 'scissors'];
+    const choicesArray = ['./assets/rock.png', './assets/paper.png', './assets/scissor.png'];
     let userWins = 0;
     let computerWins = 0;
     const totalRounds = 10;
     const memoryGame = document.getElementById('memoryGame');
-
+    
     choices.forEach(choice => {
         choice.addEventListener('click', () => {
             const userChoice = choice.id;
-            const computerChoice = choicesArray[Math.floor(Math.random() * 3)];
-            const result = determineWinner(userChoice, computerChoice);
+            const computerChoiceIndex = Math.floor(Math.random() * 3);
+            const computerChoice = choicesArray[computerChoiceIndex];
+            const computerChoiceId = computerChoice.split('/').pop().split('.')[0]; // Extract 'rock', 'paper', or 'scissor' from the src
+            const result = determineWinner(userChoice, computerChoiceId);
             if (result === 'Kazandın!') userWins++;
             else if (result === 'Kaybettin!') computerWins++;
-            resultDiv.textContent = `Sen: ${capitalize(userChoice)}, Bilgisayar: ${capitalize(computerChoice)}. ${result}`;
+            resultDiv.innerHTML = `Sen: <img src="${choice.src}" alt="Senin Seçimin">,&nbsp;&nbsp;&nbsp; Bilgisayar: <img src="${computerChoice}" alt="Bilgisayarın Seçimi"><br>${result}`;
             rpsScoreDisplay.textContent = `Sen: ${userWins}, Bilgisayar: ${computerWins}`;
             if (userWins + computerWins >= totalRounds) {
                 retryRPSButton.style.display = 'inline-block';
@@ -101,29 +103,29 @@ document.addEventListener('DOMContentLoaded', () => {
                         memoryGame.style.display = 'block';
                     }, 2000);
                 } else {
-                    resultDiv.textContent += ' Kaybettin!';
+                    resultDiv.innerHTML += '<br> Kaybettin!';
                 }
             }
         });
     });
-
+    
     retryRPSButton.addEventListener('click', () => {
         resetRPSGame();
     });
-
+    
     function resetRPSGame() {
         userWins = 0;
         computerWins = 0;
         resultDiv.textContent = '';
-        rpsScoreDisplay.textContent = '';
+        rpsScoreDisplay.textContent = 'Sen: 0, Bilgisayar: 0';
         retryRPSButton.style.display = 'none';
     }
-
+    
     function determineWinner(userChoice, computerChoice) {
         if (userChoice === computerChoice) {
             return "Berabere!";
         } else if (
-            (userChoice === 'rock' && computerChoice === 'scissors') ||
+            (userChoice === 'rock' && computerChoice === 'scissor') ||
             (userChoice === 'paper' && computerChoice === 'rock') ||
             (userChoice === 'scissors' && computerChoice === 'paper')
         ) {
@@ -132,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return "Kaybettin!";
         }
     }
+    
 
     function capitalize(word) {
         return word.charAt(0).toUpperCase() + word.slice(1);

@@ -1,103 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --yellow: #ffc538;
+  --red: #fb778b;
+  --green: #5ab7ac;
+  --black: #121212;
+  --grey: #cbcadad9;
+  --ff-comfortaa: "Comfortaa", cursive;
+  --ff-oswald: "Oswald", sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    margin: 0;
+  font-family: var(--ff-comfortaa);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--black);
+  margin: 0;
 }
 
-.container {
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.container1 {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid grey;
+  background-color: black;
+  box-shadow: 3px 3px 1250px 1px;
+  width: 100%;
+  min-width: 300px;
+  max-width: 800px;
+  margin: auto;
+  color: var(--grey);
+  border-radius: 15px;
+  padding: 0.5rem;
 }
 
-.choices, #memoryBoard {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.choices {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .choice {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 0 10px;
+  padding: 12px 12px;
+  border: none;
+  background-color: black;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  margin: 0 15px;
+  border-radius: 50%;
 }
 
 .choice:hover {
-    background-color: #0056b3;
+    box-shadow: 0px 5px 20px rgba(138, 43, 226, 4);
+    box-shadow: blueviolet;
 }
 
 #guessMessage, #rpsResult, #memoryMessage, #guessAttempts, #rpsScore, #memoryAttempts {
-    margin: 20px 0;
-    font-size: 18px;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+#rpsResult {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+#rpsScore {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+#retryRPSButton {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#rpsResult img {
+  width: 50px;  /* Sonuç resimlerinin genişliği */
+  height: 50px;  /* Sonuç resimlerinin yüksekliği */
+  vertical-align: middle;
+  border-radius: 50%;
 }
 
 button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #28a745;
-    color: #fff;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+  background-color: #218838;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 input[type="text"], input[type="number"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 #memoryBoard {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 sütun */
-    gap: 5px; /* Kartlar arasındaki boşluk */
-    width: 100%;
-    min-width: 300px;
-    max-width: 800px;
-    margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 sütun */
+  gap: 10px; /* Kartlar arasındaki boşluk */
+  width: 100%;
+  min-width: 250px;
+  max-width: 450px;
+  margin: auto;
+  box-shadow: 0px 5px 20px rgba(138, 43, 226, 4);
+  box-shadow: blueviolet;
 }
 
 .memory-card {
-    width: 75px;
-    height: 75px;
-    margin: 5px;
-    background-color: #007bff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 36px;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-}
+  width: 100px;
+  height: 100px;
+  margin: 1px;
+  background-color: #6ab1fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 72px;
+  box-shadow: 0px 5px 20px rgba(138, 43, 226, 4);
+  box-shadow: blueviolet;
 
-.memory-card.flipped {
-    background-color: #fff;
-    color: #000;
-    cursor: default;
 }
-
-#congratulations {
-    font-size: 24px;
-    color: #ff6347;
-    text-align: center;
-}
+ 
 
